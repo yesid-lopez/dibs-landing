@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Caveat, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 import { JsonLd } from "@/components/json-ld";
@@ -41,6 +42,11 @@ export default function RootLayout({
       >
         <JsonLd data={getSiteJsonLd()} />
         {children}
+        <Script
+          src="https://umami.yesidlopez.de/script.js"
+          data-website-id="50b571a2-e53f-4af4-b29a-d285de96143d"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
